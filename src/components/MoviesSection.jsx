@@ -9,7 +9,7 @@ export default function MoviesSection({ movies, loading, error }) {
         <ul style={{ listStyle: "none", padding: 0, display: "flex", flexWrap: "wrap", gap: "20px" }}>
           {movies.map((movie) => (
             <li key={movie.id}>
-              <OneMovie movie={movie} />
+               <OneMovie movie={movie} />
             </li>
           ))}
         </ul>

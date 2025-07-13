@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import "./../Styles/OneMovie.css";
+
 
 export default function OneMovie({ movie }) {
   const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -6,7 +8,13 @@ export default function OneMovie({ movie }) {
   return (
     <div className="movie-card">
       <div className="poster">
+
+      <Link
+        to={`/movies/${movie.id}`}
+        state={{ title: movie.title, path: posterUrl,rateAverage:movie.vote_average,releaseDate:movie.release_date}}
+      >
         <img src={posterUrl} alt={title} />
+      </Link>
         <div className="menu-icon">⋯</div>
         <div className="rating-circle">
           <span>{movie.vote_average}</span>

@@ -1,10 +1,19 @@
 import './App.css'
-import MainSection from './components/MainSection'
+import AboutMe from './components/AboutMe';
+import MainSection from './components/MainSection';
+import {Routes,Route} from 'react-router-dom'
+import MovieDetails from './components/MovieDetails';
 function App() {
 
   return (
     <>
-      <MainSection />
+
+    <Routes>
+      <Route path="/" element={<MainSection />} />
+      <Route path="/about" element={<AboutMe />} />
+      <Route path="/movies/:id" element={<MovieDetails/>} />
+    </Routes>
+      
     </>
   )
 }
